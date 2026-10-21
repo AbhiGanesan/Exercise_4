@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.1"></script>
+    <!-- Data is hardcoded here instead of read from a file, derivation is in a separate file (order matters here)-->
+    <script src="dataHardcode.js"></script>
+    <script src="dataDerive.js"></script>
+</head>
+<body>
+    <!-- This will contain the barchart for the sales by YEAR-->
+    <div class="barChartContainer">
+        <h4>Sales by Year (Click an axis to sort by that axis)</h4>
+        <svg class="barChart" id="svgYear" width="900" height="500"></svg>
+    </div>
+    <script src="barChartYear.js"></script>
+    
+    <!-- This will contain the barchart for the sales by STORE-->
+    <div class="barChartContainer">
+        <h4>Sales by Store (Click an axis to sort by that axis)</h4>
+        <svg class="barChart" id="svgStore" width="900" height="500"></svg>
+    </div>
+    <script src="barChartStore.js"></script>
+    
+    <!-- This will contain the Histogram of sales-->
+    <div class="histogramContainer">
+        <h4>
+            Sales Histogram (Set the number of histogram bins with the slider)
+            <input id= "binSlider" name="Bin Slider" type=range min=2 max=30>
+        </h4>
+        <svg class="histogram" id="svgHistogram" width="900" height="500"></svg>
+    </div>
+    <script src="histogram.js"></script>
+</body>
